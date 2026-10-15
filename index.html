@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="form-card">
+    <header class="form-header">
+      <p class="eyebrow">STUDENT SERVICES</p>
+      <h1>Student Registration</h1>
+      <p>Enter your information to create your student registration.</p>
+    </header>
+
+    <form id="registration-form" novalidate>
+      <div class="form-grid">
+        <div class="field">
+          <label for="student-id">Student ID</label>
+          <input id="student-id" name="studentId" type="text" data-label="Student ID" data-error-target="student-id-error" autocomplete="off">
+          <small class="error-message" id="student-id-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="full-name">Full Name</label>
+          <input id="full-name" name="fullName" type="text" data-label="Full name" data-error-target="full-name-error" autocomplete="name">
+          <small class="error-message" id="full-name-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" data-label="Email" data-error-target="email-error" autocomplete="email">
+          <small class="error-message" id="email-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" placeholder="+63 912 345 6789" data-label="Phone number" data-error-target="phone-error" autocomplete="tel">
+          <small class="error-message" id="phone-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="birth-date">Date of Birth</label>
+          <input id="birth-date" name="birthDate" type="date" data-label="Date of birth" data-error-target="birth-date-error" autocomplete="bday">
+          <small class="error-message" id="birth-date-error"></small>
+        </div>
+
+        <fieldset class="field gender-field">
+          <legend>Gender</legend>
+          <div class="radio-options">
+            <label><input name="gender" type="radio" value="Female" data-label="Gender" data-error-target="gender-error"> Female</label>
+            <label><input name="gender" type="radio" value="Male" data-label="Gender" data-error-target="gender-error"> Male</label>
+            <label><input name="gender" type="radio" value="Prefer not to say" data-label="Gender" data-error-target="gender-error"> Prefer not to say</label>
+          </div>
+          <small class="error-message" id="gender-error"></small>
+        </fieldset>
+
+        <div class="field">
+          <label for="program">Program</label>
+          <select id="program" name="program" data-label="Program" data-error-target="program-error">
+            <option value="">Select a program</option>
+            <option value="BSIT">BS Information Technology</option>
+            <option value="BSCS">BS Computer Science</option>
+            <option value="BSA">BS Accountancy</option>
+            <option value="BSED">Bachelor of Secondary Education</option>
+          </select>
+          <small class="error-message" id="program-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="year-level">Year Level</label>
+          <select id="year-level" name="yearLevel" data-label="Year level" data-error-target="year-level-error">
+            <option value="">Select a year level</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+          </select>
+          <small class="error-message" id="year-level-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="password-control">
+            <input id="password" name="password" type="password" data-label="Password" data-error-target="password-error" autocomplete="new-password">
+            <button class="visibility-button" id="toggle-password" type="button" aria-pressed="false">Show</button>
+          </div>
+          <small class="hint">Use at least 8 characters.</small>
+          <small class="error-message" id="password-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="confirm-password">Confirm Password</label>
+          <input id="confirm-password" name="confirmPassword" type="password" data-label="Confirm password" data-error-target="confirm-password-error" autocomplete="new-password">
+          <small class="error-message" id="confirm-password-error"></small>
+        </div>
+
+        <div class="field full-width">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="3" data-label="Address" data-error-target="address-error" autocomplete="street-address"></textarea>
+          <small class="error-message" id="address-error"></small>
+        </div>
+
+        <div class="field full-width agreement-field">
+          <label class="agreement-label" for="agreement">
+            <input id="agreement" name="agreement" type="checkbox" data-label="Agreement" data-error-target="agreement-error">
+            I confirm that the information above is correct.
+          </label>
+          <small class="error-message" id="agreement-error"></small>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="submit-button" type="submit">Register</button>
+        <button class="reset-button" type="reset">Reset Form</button>
+      </div>
+      <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
